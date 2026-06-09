@@ -1,0 +1,642 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+  "provider": {
+    "nvidia": {
+      "name": "NVIDIA NIM",
+      "options": {
+        "baseURL": "https://integrate.api.nvidia.com/v1"
+      },
+      "models": {
+        "deepseek-ai/deepseek-v4-pro": { "name": "DeepSeek V4 Pro" },
+        "deepseek-ai/deepseek-v4-flash": { "name": "DeepSeek V4 Flash" },
+        "moonshotai/kimi-k2.6": { "name": "Kimi K2.6 1T MoE (multimodal)" },
+        "meta/llama-3.2-90b-vision-instruct": { "name": "Llama 3.2 90B Vision" },
+        "meta/llama-3.2-11b-vision-instruct": { "name": "Llama 3.2 11B Vision" },
+        "microsoft/phi-4-multimodal-instruct": { "name": "Phi-4 Multimodal Instruct" },
+        "nvidia/nemotron-3-super-120b-a12b": { "name": "Nemotron 3 Super 120B (reasoning)" },
+        "nvidia/nemotron-3-ultra-550b-a55b": { "name": "Nemotron 3 Ultra 550B (Frontier+)" },
+        "nvidia/nemotron-4-340b-instruct": { "name": "Nemotron 4 340B Instruct" },
+        "nvidia/nemotron-nano-12b-v2-vl": { "name": "Nemotron Nano 12B VL (vision)" },
+        "nvidia/vila": { "name": "VILA (vision-language)" },
+        "nvidia/llama-3.1-nemotron-nano-vl-8b-v1": { "name": "Nemotron Nano VL 8B (vision)" },
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": { "name": "Nemotron Omni 30B (vision+reasoning)" },
+        "nvidia/nvclip": { "name": "NVCLIP (vision embedding)" },
+        "google/deplot": { "name": "DePlot (chart-to-text)" },
+        "microsoft/kosmos-2": { "name": "Kosmos-2 (multimodal)" },
+        "mistralai/mistral-nemotron": { "name": "Mistral Nemotron" },
+        "minimaxai/minimax-m2.7": { "name": "Minimax M2.7" },
+        "z-ai/glm-5.1": { "name": "GLM-5.1" }
+      }
+    },
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (local)",
+      "options": { "baseURL": "http://localhost:11434/v1" },
+      "models": {
+        "gemma-3-4b-it-q4": { "name": "Gemma 3 4B (local)" },
+        "qwen2.5:7b": { "name": "Qwen 2.5 7B (local)" },
+        "dolphin-llama3:8b": { "name": "Dolphin Llama3 8B (local)" },
+        "huihui_ai/gemma-4-abliterated:e4b-q4_K": { "name": "Gemma 4 Abliterated 4B (local)" },
+        "minicpm-v:8b": { "name": "MiniCPM-V 8B (local)" },
+        "lfm-2.5-1.2b-it-q8": { "name": "LFM 2.5 1.2B (local)" },
+        "nomic-embed-text": { "name": "Nomic Embed Text (local)" }
+      }
+    }
+  },
+  "instructions": [
+    "C:\\Users\\scott\\AGENTS.md",
+    "C:\\Users\\scott\\.config\\opencode\\meta-orchestrator.md"
+  ],
+  "mcp": {
+    "agentmemory": {
+      "type": "local",
+      "command": ["npx", "-y", "@agentmemory/mcp"],
+      "enabled": true
+    },
+    "superpowers": {
+      "type": "local",
+      "command": ["node", "C:\\Users\\scott\\superpowers-mcp\\build\\index.js"],
+      "enabled": true
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true
+    },
+    "github": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-github@latest"],
+      "enabled": true,
+      "env": {
+        "GITHUB_TOKEN": "{env:OC_GITHUB_PAT}"
+      }
+    },
+    "playwright": {
+      "type": "local",
+      "command": ["npx", "-y", "@playwright/mcp@latest"],
+      "enabled": true
+    },
+    "puppeteer": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-puppeteer"],
+      "enabled": true,
+      "timeout": 30000
+    },
+    "codegraph": {
+      "type": "local",
+      "command": ["codegraph", "serve", "--mcp"],
+      "enabled": true
+    }
+  },
+  "plugin": [
+    "C:\\Users\\scott\\.config\\opencode\\plugins\\agentmemory-capture.ts"
+  ],
+  "lsp": {
+    "clangd": {
+      "command": ["clangd"],
+      "extensions": [".cpp", ".cc", ".cxx", ".c++", ".c", ".h", ".hpp", ".hh", ".hxx", ".h++"]
+    },
+    "cmake": {
+      "command": ["cmake-language-server"],
+      "extensions": [".cmake", "CMakeLists.txt"]
+    },
+    "json": {
+      "command": ["vscode-json-languageserver", "--stdio"],
+      "extensions": [".json", ".jsonc"]
+    },
+    "pyright": {
+      "command": ["pyright-langserver", "--stdio"],
+      "extensions": [".py", ".pyi"]
+    }
+  },
+  "agent": {
+    "code-squad": {
+      "mode": "primary",
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\code-squad.md}"
+    },
+    "analytics-squad": {
+      "mode": "primary",
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\analytics-squad.md}"
+    },
+    "vision-squad": {
+      "mode": "primary",
+      "model": "nvidia/moonshotai/kimi-k2.6",
+      "temperature": 0.2,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\vision-squad.md}"
+    },
+    "plan": {
+      "mode": "primary",
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\plan.md}",
+      "permission": {
+        "edit": "deny",
+        "write": "deny",
+        "bash": "deny",
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "task": "allow",
+        "webfetch": "allow",
+        "websearch": "allow",
+        "question": "allow"
+      }
+    },
+    "heavy-hitter": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Nvidia NIM frontier model squad for the hardest problems. Uses Nemotron 3 Ultra (frontier reasoning), DeepSeek V4 Pro (heavy engineering), and Kimi K2.6 (multimodal synthesis). Invoke when standard models aren't cutting it.",
+      "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
+      "temperature": 0.1,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\heavy-hitter.md}"
+    },
+    "outreach-squad": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Lead generation, email finding, and cold outreach campaigns. Invoke when the task involves finding local business contacts or sending outreach emails.",
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\outreach-squad.md}"
+    },
+    "seo-squad": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Full SEO audits covering on-page, technical, content, and backlink analysis. Invoke when the task involves search engine optimization or audit reports.",
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\seo-squad.md}"
+    },
+    "content-squad": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Writing, editing, summarization, translation, and content strategy. Invoke for any content creation, editing, or multilingual tasks.",
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.5,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\content-squad.md}"
+    },
+    "reapack-prep": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "REAPER ReaScript shipping pipeline: audit Lua, fix ReaPack headers, optimize for real-time, and build ReaPack index. Invoke via /reapack-prep command.",
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.2,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\reapack-prep.md}"
+    },
+    "code-writer": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\code-writer.md}"
+    },
+    "code-reviewer": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
+      "temperature": 0.1,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\code-reviewer.md}"
+    },
+    "bug-hunter": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
+      "temperature": 0.1,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\bug-hunter.md}"
+    },
+    "oracle": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
+      "temperature": 0.1,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\oracle.md}"
+    },
+    "critic": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
+      "temperature": 0.5,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\critic.md}"
+    },
+    "system-architect": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\system-architect.md}"
+    },
+    "test-engineer": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.1,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\test-engineer.md}"
+    },
+    "web-researcher": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.5,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\web-researcher.md}"
+    },
+    "doc-reader": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/moonshotai/kimi-k2.6",
+      "temperature": 0.2,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\doc-reader.md}"
+    },
+    "knowledge-synthesizer": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.5,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\knowledge-synthesizer.md}"
+    },
+    "fact-verifier": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.1,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\fact-verifier.md}"
+    },
+    "knowledge-base": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.1,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\knowledge-base.md}"
+    },
+    "semantic-searcher": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.1,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\semantic-searcher.md}"
+    },
+    "writer": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/minimaxai/minimax-m2.7",
+      "temperature": 0.5,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\writer.md}"
+    },
+    "summarizer": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\summarizer.md}"
+    },
+    "translator": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\translator.md}"
+    },
+    "editor": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/minimaxai/minimax-m2.7",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\editor.md}"
+    },
+    "content-strategist": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/minimaxai/minimax-m2.7",
+      "temperature": 0.5,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\content-strategist.md}"
+    },
+    "outreach-writer": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/minimaxai/minimax-m2.7",
+      "temperature": 0.5,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\outreach-writer.md}"
+    },
+    "data-analyst": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\data-analyst.md}"
+    },
+    "logic-engine": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/z-ai/glm-5.1",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\logic-engine.md}"
+    },
+    "planner": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\planner.md}"
+    },
+    "decision-engine": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\decision-engine.md}"
+    },
+    "methodology-advisor": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/z-ai/glm-5.1",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\methodology-advisor.md}"
+    },
+    "vision-analyst": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/moonshotai/kimi-k2.6",
+      "temperature": 0.2,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\vision-analyst.md}"
+    },
+    "embedding-engine": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.1,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\embedding-engine.md}"
+    },
+    "multimodal-synthesizer": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/moonshotai/kimi-k2.6",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\multimodal-synthesizer.md}"
+    },
+    "media-coordinator": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.2,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\media-coordinator.md}"
+    },
+    "lead-scout": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.7,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\lead-scout.md}"
+    },
+    "email-finder": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.2,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\email-finder.md}"
+    },
+    "web-design-concept": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/minimaxai/minimax-m2.7",
+      "temperature": 0.7,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\web-design-concept.md}"
+    },
+    "on-page-seo": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.2,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\on-page-seo.md}"
+    },
+    "technical-seo": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.2,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\technical-seo.md}"
+    },
+    "content-seo": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\content-seo.md}"
+    },
+    "backlink-agent": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\backlink-agent.md}"
+    },
+    "lua-auditor": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.0,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\lua-auditor.md}"
+    },
+    "header-doctor": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.0,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\header-doctor.md}"
+    },
+    "rt-optimizer": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.1,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\rt-optimizer.md}"
+    },
+    "index-builder": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.0,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\index-builder.md}"
+    },
+    "skill-grader": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.1,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skill-grader.md}"
+    },
+    "skill-comparator": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skill-comparator.md}"
+    },
+    "skill-analyzer": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skill-analyzer.md}"
+    },
+    "orchestrator": {
+      "mode": "subagent",
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.1,
+      "hidden": true,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\orchestrator.md}"
+    },
+    "memory-manager": {
+      "mode": "subagent",
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.1,
+      "hidden": true,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\memory-manager.md}"
+    },
+    "context-tracker": {
+      "mode": "subagent",
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.1,
+      "hidden": true,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\context-tracker.md}"
+    },
+    "tool-dispatcher": {
+      "mode": "subagent",
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.1,
+      "hidden": true,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\tool-dispatcher.md}"
+    },
+    "state-machine": {
+      "mode": "subagent",
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.1,
+      "hidden": true,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\state-machine.md}"
+    },
+    "atlas": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Project planner and task decomposer for web projects",
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\atlas.md}"
+    },
+    "hephaestus": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Code generator and implementer for web development",
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.2,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\hephaestus.md}"
+    },
+    "prometheus": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Test generator and validation specialist",
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.2,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\prometheus.md}"
+    },
+    "momus": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Debugging and error analysis specialist",
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.2,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\momus.md}"
+    },
+    "explore": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Fast file exploration and codebase navigation",
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.1,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\explore.md}"
+    },
+    "skillful-orchestrator": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Coordinates 4-stage agent system builder (Sam->Jenny->Will->Tom)",
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.2,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skillful\\skillful\\skillful-orchestrator.md}"
+    },
+    "sam-analyst": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Requirements analyst for agent system design",
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.3,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skillful\\skillful\\sam-analyst.md}"
+    },
+    "jenny-engineer": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Prompt engineer - transforms requirements into Agent+Skill designs",
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.2,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skillful\\skillful\\jenny-engineer.md}"
+    },
+    "will-reviewer": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Quality reviewer for agent+skill systems",
+      "model": "nvidia/deepseek-ai/deepseek-v4-pro",
+      "temperature": 0.1,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skillful\\skillful\\will-reviewer.md}"
+    },
+    "tom-builder": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Project builder - generates .agents/ directory structure from designs",
+      "model": "nvidia/deepseek-ai/deepseek-v4-flash",
+      "temperature": 0.2,
+      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skillful\\skillful\\tom-builder.md}"
+    }
+  },
+  "permission": {
+    "skill": { "*": "allow" },
+    "edit": "allow",
+    "bash": "allow",
+    "read": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "task": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "question": "allow"
+  },
+  "command": {
+    "recall": {
+      "template": "Recall from memory:\n1. Call `memory_smart_search` (BM25 + vector + graph hybrid) and `memory_lesson_recall` with the user's query\n2. Combine results, group by session\n3. Show type, title, narrative for each result\n4. Highlight high-importance items (score >= 7)\n5. Show lessons with confidence scores",
+      "description": "Search agentmemory for session history and lessons"
+    },
+    "remember": {
+      "template": "Save to memory:\n1. Extract the core insight or information from context\n2. Derive 2-5 searchable concepts\n3. Extract relevant file paths\n4. Call `memory_save` with type (pattern|preference|architecture|bug|workflow|fact) and concepts\n5. Confirm what was saved",
+      "description": "Save information to agentmemory for future recall"
+    },
+    "briefing": {
+      "template": "Update the global session briefing:\n1. Call `agentmemory_memory_recall` with query \"global status briefing\" to get the current briefing if it exists\n2. Summarize what has been done recently (check recent memories and observations)\n3. Save an updated briefing via `memory_save` with:\n   - content: concise markdown with ## Done, ## Todo, ## Active sections\n   - type: fact\n   - concepts: global,briefing,status,todo,project\n4. Display the updated briefing to the user",
+      "description": "Create or update the global session briefing (shown every chat)"
+    },
+    "changelog": {
+      "template": "Retrieve and display the session changelog:\n1. Call `agentmemory_memory_recall` with query \"session-log\" to get recent session log entries\n2. Call `agentmemory_memory_recall` with query \"session-summary\" to get any compiled summaries\n3. Format as a markdown log showing each session with date, files changed, decisions, outcomes\n4. Display to user",
+      "description": "Show the full session changelog from agentmemory"
+    },
+    "endsession": {
+      "template": "Finalize the current session:\n1. Call `agentmemory_memory_recall` with query \"session-log session-{today's date YYYY-MM-DD}\" to get all entries from this session\n2. Compile into a final summary markdown with sections: ## Session {date}, ### Files Changed, ### Decisions, ### Outcomes\n3. Save the summary via `memory_save` with type=\"fact\", concepts=\"session-summary,session-{date}\"\n4. Append the summary to `C:\\Users\\scott\\.config\\opencode\\SESSION_LOG.md` using the Write tool\n5. Also update the global briefing: call `memory_recall` with query \"global status briefing\", incorporate this session's work, re-save\n6. Print the final session summary to the user",
+      "description": "Finalize session: compile changelog, save summary, update briefing"
+    },
+    "build": {
+      "template": "Run the full CMake build pipeline DAG for the project at {{project_dir}}:\n1. Run `run_cmake_pipeline` from the cmake-pipeline MCP\n2. Collect the result log\n3. If errors, report them. If ok, confirm the package path.\n\nDefault config: Release, arch: x64.",
+      "description": "LangGraph DAG: cmake configure -> compile -> validate -> test -> sign -> package"
+    },
+    "reapack-prep": {
+      "template": "Run the ReaPack prep pipeline on the current script:\n1. @lua-auditor -- read-only audit first\n2. @header-doctor -- repair/add ReaPack @metadata header\n3. @rt-optimizer -- fix paths, undo hygiene, performance\n4. @index-builder -- generate/validate ReaPack index\n\nPause after each step for human review before continuing.",
+      "description": "Run ReaPack shipping pipeline (audit, header, optimize, index)"
+    }
+  }
+}
