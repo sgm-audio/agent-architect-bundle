@@ -1,7 +1,7 @@
 import os, re, json
 
-OP = r'C:\Users\scott\.config\opencode\skills'
-HM = r'C:\Users\scott\AppData\Local\hermes\skills'
+OP = os.path.expanduser(r'~/.config/opencode/skills')
+HM = os.path.join(os.environ.get('LOCALAPPDATA', os.path.expanduser('~')), 'hermes', 'skills')
 
 def categorize(name):
     n = name.lower()
