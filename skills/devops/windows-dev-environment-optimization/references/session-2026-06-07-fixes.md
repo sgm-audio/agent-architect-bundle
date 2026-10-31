@@ -64,7 +64,7 @@
 
 Used Windows directory junction (reparse point) to avoid copying 2.4GB:
 ```powershell
-New-Item -Path 'C:\Users\scott\miniconda3_NEW' -ItemType Junction -Target 'C:\pinokio\bin\miniconda'
+New-Item -Path 'C:\Users\<user>\miniconda3_NEW' -ItemType Junction -Target 'C:\pinokio\bin\miniconda'
 ```
 
 Failed approaches:
@@ -85,8 +85,8 @@ Failed approaches:
 
 ## Files Modified
 
-- `C:\Users\scott\OneDrive\Documents\PowerShell\profile.ps1` (PS7)
-- `C:\Users\scott\OneDrive\Documents\WindowsPowerShell\profile.ps1` (PS5)
+- `C:\Users\<user>\OneDrive\Documents\PowerShell\profile.ps1` (PS7)
+- `C:\Users\<user>\OneDrive\Documents\WindowsPowerShell\profile.ps1` (PS5)
 - `C:\pinokio\bin\miniconda\.condarc` (added `auto_activate_base: false`, updated paths)
 - `C:\\pinokio\\bin\\miniconda\\etc\\conda\\deactivate.d\\openssl_deactivate-win.ps1` (added ErrorAction)
 - System PATH (Machine) — removed 3 dead entries

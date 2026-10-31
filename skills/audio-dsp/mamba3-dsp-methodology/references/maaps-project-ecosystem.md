@@ -33,7 +33,7 @@
 | **DSP chain** | EQ (6-band ZDF), compressor, saturator, reverb, spectral feedback |
 | **Tests** | 13 tests: dsp, inference_thread, mamba_layer, param_gate, state_serialization, bench_mamba, latency, noise_floor, soak, cpu_budget, spectral_feedback, alloc_audit, tsan |
 | **Key files** | `TODO_LV2_VST3.md`, `python_training/models/effect_controller.py`, `tools/simple_mamba.py` |
-| **VST3 skeleton** | `/mnt/c/Users/scott/OneDrive/Desktop/MambaDAW.vst3/` (empty) |
+| **VST3 skeleton** | `/mnt/c/Users/<user>/OneDrive/Desktop/MambaDAW.vst3/` (empty) |
 
 ### EmT (separate from Mamba DAW!)
 

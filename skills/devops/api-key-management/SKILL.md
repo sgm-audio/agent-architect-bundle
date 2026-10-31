@@ -81,7 +81,7 @@ Write to `~/.hermes/.env` using `terminal` with heredoc or Python file operation
 
 ```bash
 python3 -c "
-with open('/home/scott/.hermes/.env', 'a') as f:
+with open('~/.hermes/.env', 'a') as f:
     f.write(f'\\n# {provider_name}\\n')
     f.write(f'{ENV_VAR}={key_value}\\n')
 "
@@ -96,7 +96,7 @@ with open('/home/scott/.hermes/.env', 'a') as f:
 ### 3. Verify without exposing
 
 ```python
-with open('/home/scott/.hermes/.env') as f:
+with open('~/.hermes/.env') as f:
     for line in f:
         if line.startswith('ENV_VAR='):
             val = line.strip().split('=', 1)[1]
