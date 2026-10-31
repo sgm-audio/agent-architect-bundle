@@ -21,6 +21,6 @@ $39 USD
 
 ### Installation
 ```bash
-hermes skills tap add scottmills306/agent-architect-bundle
+hermes skills tap add sgm-audio/agent-architect-bundle
 hermes skills list
 ```

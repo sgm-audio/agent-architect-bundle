@@ -1,7 +1,7 @@
 # Agent Architect Bundle - Gumroad Listing
 
 ## Title
-Agent Architect Bundle: 300+ AI Agent Skills, Workflows & Agent Squads
+Agent Architect Bundle: 290+ AI Agent Skills, Workflows & Agent Squads
 
 ## Price
 $79 USD
@@ -10,7 +10,7 @@ $79 USD
 
 **Stop rebuilding your AI agent from scratch every time.**
 
-The Agent Architect Bundle is 2 years of real-world agent development — 300+ production-tested skills, 62 specialist agent definitions, and complete multi-agent squad architecture — packaged for instant use in both **Hermes Agent** and **OpenCode**.
+The Agent Architect Bundle is 2 years of real-world agent development — 291 skills, 62 specialist agent definitions, and complete multi-agent squad architecture — packaged for instant use in both **Hermes Agent** and **OpenCode**.
 
 ### What You Get
 
@@ -65,7 +65,7 @@ These skills and agents were built and refined across hundreds of real sessions 
 
 **Hermes:**
 ```bash
-hermes skills tap add scottmills306/agent-architect-bundle
+hermes skills tap add sgm-audio/agent-architect-bundle
 hermes skills list
 ```
 
