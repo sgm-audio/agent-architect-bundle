@@ -4,7 +4,7 @@
 
 ### Via Tap (Recommended)
 ```bash
-hermes skills tap add scottmills306/agent-architect-bundle
+hermes skills tap add sgm-audio/agent-architect-bundle
 hermes skills list          # See all available skills
 hermes skills search audio  # Search for audio-related skills
 ```
@@ -40,6 +40,7 @@ cp -r opencode/skills/frontend-build ~/.config/opencode/skills/
 Edit `~/.config/opencode/opencode.jsonc` to set your API keys:
 - NVIDIA NIM: Set `NVIDIA_API_KEY` environment variable
 - Ollama: Ensure Ollama is running on localhost:11434
+- The `superpowers` MCP entry points at `/path/to/superpowers-mcp/build/index.js`. Change it to where you built superpowers-mcp, or set `"enabled": false`.
 
 ## Verifying Installation
 

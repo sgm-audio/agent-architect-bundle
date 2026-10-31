@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+
+# Local agent/tool state
+SESSION_LOG.md
+__pycache__/

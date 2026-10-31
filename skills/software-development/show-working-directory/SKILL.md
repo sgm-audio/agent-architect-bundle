@@ -12,6 +12,6 @@ Every response must begin with `[cwd: /path]` showing the absolute current worki
 
 This is required. The user works across many project directories and needs spatial grounding. Skipping this causes confusion on subsequent commands.
 
-Example: `[cwd: /c/Users/scott/OneDrive/Desktop]`
+Example: `[cwd: /c/Users/<user>/OneDrive/Desktop]`
 
 When the working directory changes mid-conversation (e.g., after a `cd` command), announce the new path in the next response.

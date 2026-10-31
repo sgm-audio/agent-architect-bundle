@@ -354,7 +354,7 @@ process(action="write", session_id="<id>", data="\x03")
 
 ### Pitfalls in the hybrid workflow
 
-1. **Hermes runs in WSL, OpenCode runs in Windows** — OpenCode binary at `/mnt/c/Users/scott/AppData/Roaming/npm/opencode`. Paths to Windows projects like `/mnt/c/dev/...` work from both sides.
+1. **Hermes runs in WSL, OpenCode runs in Windows** — OpenCode binary at `/mnt/c/Users/<user>/AppData/Roaming/npm/opencode`. Paths to Windows projects like `/mnt/c/dev/...` work from both sides.
 2. **Don't re-explain the methodology** — when delegating to OpenCode, the prompt should focus on *what to code*, not the DSP theory (that's in this skill). If OpenCode needs context, attach a file rather than re-educating.
 3. **OpenCode's default provider may fail** — if `opencode run` gives "Unexpected server error", force a provider with `--model`. User has 5 providers configured (Nvidia, Google, GitHub Copilot, OpenCode Go, DeepSeek).
 4. **Smoke test before trusting** — Always verify OpenCode works before delegating a long task: `opencode run 'Respond with exactly: OPENCODE_SMOKE_OK'`. If it fails on the default provider, try forcing `--model`.

@@ -177,7 +177,7 @@ When setting PATH in a PowerShell profile, use single-quoted arrays. Double-quot
 
 ```powershell
 # WRONG — \U in path triggers escape parsing
-$Env:Path = "C:\Users\scott\..." -split '...'
+$Env:Path = "C:\Users\<user>\..." -split '...'
 
 # RIGHT — single quotes avoid escape issues
 $condaPaths = 'C:\path\one', 'C:\path\two'

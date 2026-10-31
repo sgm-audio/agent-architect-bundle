@@ -72,7 +72,7 @@ rg "ClearConsole|file_exists|GetNumTracks|TrackFX_AddByName\([^,]+,[^,]+,[^,]+\)
 Load the `reaper-validator` skill for the full checklist. For programmatic checking, run the validator script directly (it lives under the reaper-validator skill):
 
 ```bash
-python "C:\Users\scott\AppData\Local\hermes\skills\reaper-reascripts\reaper-validator\scripts\validate-top-shelf.py" path/to/script.lua
+python "%LOCALAPPDATA%\hermes\skills\reaper-reascripts\reaper-validator\scripts\validate-top-shelf.py" path/to/script.lua
 ```
 
 This runs all 12 checks in one shot and returns JSON with pass/fail per check and a confidence score.
