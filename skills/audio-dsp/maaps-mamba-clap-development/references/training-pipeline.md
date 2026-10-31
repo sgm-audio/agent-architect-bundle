@@ -1,7 +1,7 @@
 # Training Pipeline Reference
 
 ## Location
-Training code at `C:\Users\scott\OneDrive\Documents\training\`
+Training code at `C:\Users\<user>\OneDrive\Documents\training\`
 
 ## Files
 - `train_eq_agent.py` — EQ optimization RL agent

@@ -94,7 +94,7 @@ Cycle through these during sessions. Ask one or two per session, not all at once
 
 **Step 1 — Requirements:**
 - Written from St. Paul's Hospital psych ward. The requirement was "do something meaningful while locked up." That requirement is met.
-- The open letter version exists at `C:\Users\scott\NAIC_Open_Letter.md` (114 lines, 3-minute read).
+- The open letter version exists at `C:\Users\<user>\NAIC_Open_Letter.md` (114 lines, 3-minute read).
 
 **Step 2 — Delete:**
 - Delete the expectation that Parliament will act. That's not the point of the document.
