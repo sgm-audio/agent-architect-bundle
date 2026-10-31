@@ -45,8 +45,8 @@
     }
   },
   "instructions": [
-    "C:\\Users\\scott\\AGENTS.md",
-    "C:\\Users\\scott\\.config\\opencode\\meta-orchestrator.md"
+    "~/.config/opencode/AGENTS.md",
+    "~/.config/opencode/meta-orchestrator.md"
   ],
   "mcp": {
     "agentmemory": {
@@ -56,7 +56,7 @@
     },
     "superpowers": {
       "type": "local",
-      "command": ["node", "C:\\Users\\scott\\superpowers-mcp\\build\\index.js"],
+      "command": ["node", "/path/to/superpowers-mcp/build/index.js"],
       "enabled": true
     },
     "context7": {
@@ -90,7 +90,7 @@
     }
   },
   "plugin": [
-    "C:\\Users\\scott\\.config\\opencode\\plugins\\agentmemory-capture.ts"
+    "~/.config/opencode/plugins/agentmemory-capture.ts"
   ],
   "lsp": {
     "clangd": {
@@ -115,25 +115,25 @@
       "mode": "primary",
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\code-squad.md}"
+      "prompt": "{file:~/.config/opencode/agents/code-squad.md}"
     },
     "analytics-squad": {
       "mode": "primary",
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\analytics-squad.md}"
+      "prompt": "{file:~/.config/opencode/agents/analytics-squad.md}"
     },
     "vision-squad": {
       "mode": "primary",
       "model": "nvidia/moonshotai/kimi-k2.6",
       "temperature": 0.2,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\vision-squad.md}"
+      "prompt": "{file:~/.config/opencode/agents/vision-squad.md}"
     },
     "plan": {
       "mode": "primary",
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\plan.md}",
+      "prompt": "{file:~/.config/opencode/agents/plan.md}",
       "permission": {
         "edit": "deny",
         "write": "deny",
@@ -153,7 +153,7 @@
       "description": "Nvidia NIM frontier model squad for the hardest problems. Uses Nemotron 3 Ultra (frontier reasoning), DeepSeek V4 Pro (heavy engineering), and Kimi K2.6 (multimodal synthesis). Invoke when standard models aren't cutting it.",
       "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
       "temperature": 0.1,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\heavy-hitter.md}"
+      "prompt": "{file:~/.config/opencode/agents/heavy-hitter.md}"
     },
     "outreach-squad": {
       "mode": "subagent",
@@ -161,7 +161,7 @@
       "description": "Lead generation, email finding, and cold outreach campaigns. Invoke when the task involves finding local business contacts or sending outreach emails.",
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\outreach-squad.md}"
+      "prompt": "{file:~/.config/opencode/agents/outreach-squad.md}"
     },
     "seo-squad": {
       "mode": "subagent",
@@ -169,7 +169,7 @@
       "description": "Full SEO audits covering on-page, technical, content, and backlink analysis. Invoke when the task involves search engine optimization or audit reports.",
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\seo-squad.md}"
+      "prompt": "{file:~/.config/opencode/agents/seo-squad.md}"
     },
     "content-squad": {
       "mode": "subagent",
@@ -177,7 +177,7 @@
       "description": "Writing, editing, summarization, translation, and content strategy. Invoke for any content creation, editing, or multilingual tasks.",
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.5,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\content-squad.md}"
+      "prompt": "{file:~/.config/opencode/agents/content-squad.md}"
     },
     "reapack-prep": {
       "mode": "subagent",
@@ -185,336 +185,336 @@
       "description": "REAPER ReaScript shipping pipeline: audit Lua, fix ReaPack headers, optimize for real-time, and build ReaPack index. Invoke via /reapack-prep command.",
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.2,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\reapack-prep.md}"
+      "prompt": "{file:~/.config/opencode/agents/reapack-prep.md}"
     },
     "code-writer": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\code-writer.md}"
+      "prompt": "{file:~/.config/opencode/agents/code-writer.md}"
     },
     "code-reviewer": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
       "temperature": 0.1,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\code-reviewer.md}"
+      "prompt": "{file:~/.config/opencode/agents/code-reviewer.md}"
     },
     "bug-hunter": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
       "temperature": 0.1,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\bug-hunter.md}"
+      "prompt": "{file:~/.config/opencode/agents/bug-hunter.md}"
     },
     "oracle": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
       "temperature": 0.1,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\oracle.md}"
+      "prompt": "{file:~/.config/opencode/agents/oracle.md}"
     },
     "critic": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
       "temperature": 0.5,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\critic.md}"
+      "prompt": "{file:~/.config/opencode/agents/critic.md}"
     },
     "system-architect": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\system-architect.md}"
+      "prompt": "{file:~/.config/opencode/agents/system-architect.md}"
     },
     "test-engineer": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.1,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\test-engineer.md}"
+      "prompt": "{file:~/.config/opencode/agents/test-engineer.md}"
     },
     "web-researcher": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.5,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\web-researcher.md}"
+      "prompt": "{file:~/.config/opencode/agents/web-researcher.md}"
     },
     "doc-reader": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/moonshotai/kimi-k2.6",
       "temperature": 0.2,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\doc-reader.md}"
+      "prompt": "{file:~/.config/opencode/agents/doc-reader.md}"
     },
     "knowledge-synthesizer": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.5,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\knowledge-synthesizer.md}"
+      "prompt": "{file:~/.config/opencode/agents/knowledge-synthesizer.md}"
     },
     "fact-verifier": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.1,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\fact-verifier.md}"
+      "prompt": "{file:~/.config/opencode/agents/fact-verifier.md}"
     },
     "knowledge-base": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.1,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\knowledge-base.md}"
+      "prompt": "{file:~/.config/opencode/agents/knowledge-base.md}"
     },
     "semantic-searcher": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.1,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\semantic-searcher.md}"
+      "prompt": "{file:~/.config/opencode/agents/semantic-searcher.md}"
     },
     "writer": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/minimaxai/minimax-m2.7",
       "temperature": 0.5,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\writer.md}"
+      "prompt": "{file:~/.config/opencode/agents/writer.md}"
     },
     "summarizer": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\summarizer.md}"
+      "prompt": "{file:~/.config/opencode/agents/summarizer.md}"
     },
     "translator": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\translator.md}"
+      "prompt": "{file:~/.config/opencode/agents/translator.md}"
     },
     "editor": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/minimaxai/minimax-m2.7",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\editor.md}"
+      "prompt": "{file:~/.config/opencode/agents/editor.md}"
     },
     "content-strategist": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/minimaxai/minimax-m2.7",
       "temperature": 0.5,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\content-strategist.md}"
+      "prompt": "{file:~/.config/opencode/agents/content-strategist.md}"
     },
     "outreach-writer": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/minimaxai/minimax-m2.7",
       "temperature": 0.5,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\outreach-writer.md}"
+      "prompt": "{file:~/.config/opencode/agents/outreach-writer.md}"
     },
     "data-analyst": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\data-analyst.md}"
+      "prompt": "{file:~/.config/opencode/agents/data-analyst.md}"
     },
     "logic-engine": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/z-ai/glm-5.1",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\logic-engine.md}"
+      "prompt": "{file:~/.config/opencode/agents/logic-engine.md}"
     },
     "planner": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\planner.md}"
+      "prompt": "{file:~/.config/opencode/agents/planner.md}"
     },
     "decision-engine": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\decision-engine.md}"
+      "prompt": "{file:~/.config/opencode/agents/decision-engine.md}"
     },
     "methodology-advisor": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/z-ai/glm-5.1",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\methodology-advisor.md}"
+      "prompt": "{file:~/.config/opencode/agents/methodology-advisor.md}"
     },
     "vision-analyst": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/moonshotai/kimi-k2.6",
       "temperature": 0.2,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\vision-analyst.md}"
+      "prompt": "{file:~/.config/opencode/agents/vision-analyst.md}"
     },
     "embedding-engine": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.1,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\embedding-engine.md}"
+      "prompt": "{file:~/.config/opencode/agents/embedding-engine.md}"
     },
     "multimodal-synthesizer": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/moonshotai/kimi-k2.6",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\multimodal-synthesizer.md}"
+      "prompt": "{file:~/.config/opencode/agents/multimodal-synthesizer.md}"
     },
     "media-coordinator": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.2,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\media-coordinator.md}"
+      "prompt": "{file:~/.config/opencode/agents/media-coordinator.md}"
     },
     "lead-scout": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.7,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\lead-scout.md}"
+      "prompt": "{file:~/.config/opencode/agents/lead-scout.md}"
     },
     "email-finder": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.2,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\email-finder.md}"
+      "prompt": "{file:~/.config/opencode/agents/email-finder.md}"
     },
     "web-design-concept": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/minimaxai/minimax-m2.7",
       "temperature": 0.7,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\web-design-concept.md}"
+      "prompt": "{file:~/.config/opencode/agents/web-design-concept.md}"
     },
     "on-page-seo": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.2,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\on-page-seo.md}"
+      "prompt": "{file:~/.config/opencode/agents/on-page-seo.md}"
     },
     "technical-seo": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.2,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\technical-seo.md}"
+      "prompt": "{file:~/.config/opencode/agents/technical-seo.md}"
     },
     "content-seo": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\content-seo.md}"
+      "prompt": "{file:~/.config/opencode/agents/content-seo.md}"
     },
     "backlink-agent": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\backlink-agent.md}"
+      "prompt": "{file:~/.config/opencode/agents/backlink-agent.md}"
     },
     "lua-auditor": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.0,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\lua-auditor.md}"
+      "prompt": "{file:~/.config/opencode/agents/lua-auditor.md}"
     },
     "header-doctor": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.0,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\header-doctor.md}"
+      "prompt": "{file:~/.config/opencode/agents/header-doctor.md}"
     },
     "rt-optimizer": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.1,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\rt-optimizer.md}"
+      "prompt": "{file:~/.config/opencode/agents/rt-optimizer.md}"
     },
     "index-builder": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.0,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\index-builder.md}"
+      "prompt": "{file:~/.config/opencode/agents/index-builder.md}"
     },
     "skill-grader": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.1,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skill-grader.md}"
+      "prompt": "{file:~/.config/opencode/agents/skill-grader.md}"
     },
     "skill-comparator": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skill-comparator.md}"
+      "prompt": "{file:~/.config/opencode/agents/skill-comparator.md}"
     },
     "skill-analyzer": {
       "mode": "subagent",
       "hidden": true,
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skill-analyzer.md}"
+      "prompt": "{file:~/.config/opencode/agents/skill-analyzer.md}"
     },
     "orchestrator": {
       "mode": "subagent",
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.1,
       "hidden": true,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\orchestrator.md}"
+      "prompt": "{file:~/.config/opencode/agents/orchestrator.md}"
     },
     "memory-manager": {
       "mode": "subagent",
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.1,
       "hidden": true,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\memory-manager.md}"
+      "prompt": "{file:~/.config/opencode/agents/memory-manager.md}"
     },
     "context-tracker": {
       "mode": "subagent",
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.1,
       "hidden": true,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\context-tracker.md}"
+      "prompt": "{file:~/.config/opencode/agents/context-tracker.md}"
     },
     "tool-dispatcher": {
       "mode": "subagent",
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.1,
       "hidden": true,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\tool-dispatcher.md}"
+      "prompt": "{file:~/.config/opencode/agents/tool-dispatcher.md}"
     },
     "state-machine": {
       "mode": "subagent",
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.1,
       "hidden": true,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\state-machine.md}"
+      "prompt": "{file:~/.config/opencode/agents/state-machine.md}"
     },
     "atlas": {
       "mode": "subagent",
@@ -522,7 +522,7 @@
       "description": "Project planner and task decomposer for web projects",
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\atlas.md}"
+      "prompt": "{file:~/.config/opencode/agents/atlas.md}"
     },
     "hephaestus": {
       "mode": "subagent",
@@ -530,7 +530,7 @@
       "description": "Code generator and implementer for web development",
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.2,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\hephaestus.md}"
+      "prompt": "{file:~/.config/opencode/agents/hephaestus.md}"
     },
     "prometheus": {
       "mode": "subagent",
@@ -538,7 +538,7 @@
       "description": "Test generator and validation specialist",
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.2,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\prometheus.md}"
+      "prompt": "{file:~/.config/opencode/agents/prometheus.md}"
     },
     "momus": {
       "mode": "subagent",
@@ -546,7 +546,7 @@
       "description": "Debugging and error analysis specialist",
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.2,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\momus.md}"
+      "prompt": "{file:~/.config/opencode/agents/momus.md}"
     },
     "explore": {
       "mode": "subagent",
@@ -554,7 +554,7 @@
       "description": "Fast file exploration and codebase navigation",
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.1,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\explore.md}"
+      "prompt": "{file:~/.config/opencode/agents/explore.md}"
     },
     "skillful-orchestrator": {
       "mode": "subagent",
@@ -562,7 +562,7 @@
       "description": "Coordinates 4-stage agent system builder (Sam->Jenny->Will->Tom)",
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.2,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skillful\\skillful\\skillful-orchestrator.md}"
+      "prompt": "{file:~/.config/opencode/agents/skillful/skillful/skillful-orchestrator.md}"
     },
     "sam-analyst": {
       "mode": "subagent",
@@ -570,7 +570,7 @@
       "description": "Requirements analyst for agent system design",
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.3,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skillful\\skillful\\sam-analyst.md}"
+      "prompt": "{file:~/.config/opencode/agents/skillful/skillful/sam-analyst.md}"
     },
     "jenny-engineer": {
       "mode": "subagent",
@@ -578,7 +578,7 @@
       "description": "Prompt engineer - transforms requirements into Agent+Skill designs",
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.2,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skillful\\skillful\\jenny-engineer.md}"
+      "prompt": "{file:~/.config/opencode/agents/skillful/skillful/jenny-engineer.md}"
     },
     "will-reviewer": {
       "mode": "subagent",
@@ -586,7 +586,7 @@
       "description": "Quality reviewer for agent+skill systems",
       "model": "nvidia/deepseek-ai/deepseek-v4-pro",
       "temperature": 0.1,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skillful\\skillful\\will-reviewer.md}"
+      "prompt": "{file:~/.config/opencode/agents/skillful/skillful/will-reviewer.md}"
     },
     "tom-builder": {
       "mode": "subagent",
@@ -594,7 +594,7 @@
       "description": "Project builder - generates .agents/ directory structure from designs",
       "model": "nvidia/deepseek-ai/deepseek-v4-flash",
       "temperature": 0.2,
-      "prompt": "{file:C:\\Users\\scott\\.config\\opencode\\agents\\skillful\\skillful\\tom-builder.md}"
+      "prompt": "{file:~/.config/opencode/agents/skillful/skillful/tom-builder.md}"
     }
   },
   "permission": {
@@ -627,7 +627,7 @@
       "description": "Show the full session changelog from agentmemory"
     },
     "endsession": {
-      "template": "Finalize the current session:\n1. Call `agentmemory_memory_recall` with query \"session-log session-{today's date YYYY-MM-DD}\" to get all entries from this session\n2. Compile into a final summary markdown with sections: ## Session {date}, ### Files Changed, ### Decisions, ### Outcomes\n3. Save the summary via `memory_save` with type=\"fact\", concepts=\"session-summary,session-{date}\"\n4. Append the summary to `C:\\Users\\scott\\.config\\opencode\\SESSION_LOG.md` using the Write tool\n5. Also update the global briefing: call `memory_recall` with query \"global status briefing\", incorporate this session's work, re-save\n6. Print the final session summary to the user",
+      "template": "Finalize the current session:\n1. Call `agentmemory_memory_recall` with query \"session-log session-{today's date YYYY-MM-DD}\" to get all entries from this session\n2. Compile into a final summary markdown with sections: ## Session {date}, ### Files Changed, ### Decisions, ### Outcomes\n3. Save the summary via `memory_save` with type=\"fact\", concepts=\"session-summary,session-{date}\"\n4. Append the summary to `~/.config/opencode/SESSION_LOG.md` using the Write tool\n5. Also update the global briefing: call `memory_recall` with query \"global status briefing\", incorporate this session's work, re-save\n6. Print the final session summary to the user",
       "description": "Finalize session: compile changelog, save summary, update briefing"
     },
     "build": {

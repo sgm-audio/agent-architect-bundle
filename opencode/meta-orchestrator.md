@@ -74,7 +74,7 @@ Maintain a running changelog of this session. After each significant action (cod
    - Call `agentmemory_memory_recall` with query "session-log session-{date}" to get all entries
    - Compile into a final summary with sections: ## Session {date}, ### Files Changed, ### Decisions, ### Outcomes
    - Save the compiled summary via `memory_save` with type="fact", concepts="session-summary,session-{date}"
-   - Save to `C:\Users\scott\.config\opencode\SESSION_LOG.md` by appending the summary to the file (use Write tool)
+   - Save to `~/.config/opencode/SESSION_LOG.md` by appending the summary to the file (use Write tool)
    - Print the summary to the user
    - Then update the global briefing (call `/briefing` command logic)
 

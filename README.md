@@ -1,34 +1,37 @@
 # Agent Architect Bundle
 
-**300+ AI agent skills, workflows, and agent definitions** for Hermes Agent and OpenCode.
+The agent skills and agent definitions I use day to day with Hermes Agent and OpenCode: 92 Hermes skills, 199 `SKILL.md` files under `opencode/` (146 top-level skill folders) and 62 OpenCode agent definitions. That's 291 `SKILL.md` files in total. Some of them are third-party; see [Third-party content](#third-party-content).
 
-Built by a solo developer across 2 years of real daily use. These aren't theoretical — they're battle-tested across audio DSP, web development, academic research, REAPER scripting, business ops, and more.
+I built most of these over two years of my own work in audio DSP, web dev, research, REAPER scripting and running a small business. They're tuned to how I work, so expect to edit them.
 
-## What's Inside
+## What's inside
 
-### 🤖 Hermes Agent Skills (92)
-Ready-to-load skills for Hermes Agent organized by category:
+### Hermes Agent skills (92)
 
-| Category | Count | Skills |
+Counted by `SKILL.md` files under `skills/`:
+
+| Category | Count | Examples |
 |---|---|---|
-| Audio DSP | 28 | mamba3, JUCE, CLAP, ARA, ONNX, mixing, sound design, source separation, etc. |
-| Software Dev | 20 | frontend-build, deployment-ops, CMake, prompt-engineering, design, UI/UX, etc. |
-| Business | 6 | Gumroad, Canadian copyright, SR&ED, PLG loops, subscription billing, CMRRA/SOCAN |
-| GitHub | 6 | PR workflow, code review, issues, repo management, auth, codebase inspection |
-| Reaper ReaScripts | 3 | Lua syntax, licensing, ship pipeline |
-| Academic | 3 | Full paper pipeline: research → write → review → publish |
-| + more | 26 | Ollama, local LLMs, Notion, YouTube, devops, mlops, creative, etc. |
+| Audio DSP | 28 | mamba3, JUCE, CLAP, ARA, ONNX, mixing, sound design, source separation |
+| Software development | 27 | frontend-build, deployment-ops, CMake, prompt engineering, UI/UX |
+| MLOps | 8 | evaluation, Hugging Face Hub, inference, models |
+| Business | 7 | Gumroad, Canadian copyright, SR&ED, subscription billing, CMRRA/SOCAN |
+| GitHub | 6 | PR workflow, code review, issues, repo management |
+| REAPER ReaScripts | 3 | Lua syntax, licensing, ship pipeline |
+| Academic (in `hardware/`) | 3 | academic paper, paper reviewer, paper pipeline |
+| Other | 10 | devops, Hermes, research, media, creative, productivity |
 
-### 🧠 OpenCode Agent System (146 skills + 62 agents)
-A complete multi-agent architecture with specialist roles:
+### OpenCode agent system (146 skill folders, 62 agents)
+
+A multi-agent setup with specialist roles:
 
 - **4 Primary Squads**: plan, code-squad, analytics-squad, vision-squad
 - **62 Specialist Agents**: code-writer, code-reviewer, bug-hunter, oracle, hephaestus, heavy-hitter, and more
 - **6 Webdev Agents**: atlas (planner), hephaestus (builder), oracle (reviewer), prometheus (tester), momus (debugger), explore (navigator)
-- **Full config**: opencode.jsonc with NVIDIA NIM + Ollama provider setup
+- **Config**: opencode.jsonc with NVIDIA NIM + Ollama provider setup
 - **Build pipeline**: CMake build automation
 
-### 🏗️ SDK & Integrations
+### Integrations
 - LangGraph/AutoGen multi-agent orchestration
 - NVIDIA NIM, Ollama, and local model support
 - GitHub MCP, Playwright, Puppeteer, context7
@@ -66,7 +69,17 @@ cp opencode/agents/plan.md ~/.config/opencode/agents/
 - **OpenCode**: Latest version ([install](https://opencode.ai))
 - **Optional**: Ollama for local inference, NVIDIA NIM API key for cloud models
 
-## License
+## Licence
 
-Individual skills are MIT licensed unless noted otherwise in their SKILL.md.
-The OpenCode agent system configuration is MIT licensed.
+My own work here is MIT. See [LICENSE](LICENSE).
+
+## Third-party content
+
+Some folders are other people's work, and their own licence applies:
+
+- `opencode/skills/opencode-skillful/`: MIT, zenobi.us
+- `opencode/skills/skillful-agent-system-builder/`: MIT, houarnu166. Its `context/skills_ref/` folder is a copy of Anthropic's example skills. Most of those are Apache-2.0, but `docx`, `pdf`, `pptx` and `xlsx` are © Anthropic, all rights reserved (see each `LICENSE.txt`).
+- `opencode/agents/skillful/skillful/` (`mcp-builder`, `skill-creator`): Anthropic, see each `LICENSE.txt`
+- `opencode/skills/ui-ux-pro-max-skill/`: MIT, Next Level Builder
+- `skills/creative/humanizer/`: MIT, Siqi Chen
+- Skills marked `author: Orchestra Research`, `Hugging Face` or "adapted from obra/superpowers" come from those projects.
